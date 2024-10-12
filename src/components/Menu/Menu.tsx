@@ -1,10 +1,4 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  AccordionSummaryProps,
-  styled,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { IoIosArrowForward } from "react-icons/io";
 import styles from "./Menu.module.css";
 

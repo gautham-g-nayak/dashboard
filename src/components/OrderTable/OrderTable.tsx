@@ -2,8 +2,8 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import { createTheme, ThemeProvider } from "@mui/material";
-import IconButton from "../IconButton/IconButton";
-import { PiClipboardText } from "react-icons/pi";
+// import IconButton from "../IconButton/IconButton";
+// import { PiClipboardText } from "react-icons/pi";
 import styles from "./OrderTable.module.css";
 
 const OrderTable = () => {
@@ -42,8 +42,8 @@ const OrderTable = () => {
       status: "Approved",
     },
   ];
-  const [selectedRow, setSelectedRow] = useState<any[]>([]);
-  const [paginationModel, setPaginationModel] = useState({
+  // const [selectedRow, setSelectedRow] = useState<any[]>([]);
+  const [paginationModel] = useState({
     pageSize: 4,
     page: 0,
   });

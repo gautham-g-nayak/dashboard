@@ -6,9 +6,24 @@ import Revenue from "../../components/Revenue/Revenue";
 import Location from "../../components/Location/Location";
 import Sales from "../../components/Sales/Sales";
 import Products from "../../components/Products/Products";
+import { useEffect, useState } from "react";
+import { useSideBar } from "../../context/SidebarContext";
 
 const Default = () => {
   const navigate = useNavigate();
+  const { showLeftBar, showRightBar } = useSideBar();
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = window.setTimeout(() => {
+      setLoading(false);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [showLeftBar, showRightBar]);
+
+  if (loading) return <div></div>;
   return (
     <div className={styles.page}>
       <p className={styles.title}>eCommerce</p>

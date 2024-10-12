@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--xs);
+  margin: var(--xxs);
+}
+
+.title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  max-width: 190px;
+}
+
+.time {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--black-40);
+  font-size: var(--s-font);
+  margin: 0;
+  line-height: 18px;
+}
+
+.icon_pri {
+  padding: var(--xxs);
+  display: flex;
+  align-items: center;
+  border-radius: var(--xs);
+  background-color: var(--primary-color);
+}
+
+.icon_sec {
+  background-color: var(--secondary-color);
+}
+
+.icon {
+  width: var(--xxl);
+  height: var(--xxl);
+  color: var(--text);
+}

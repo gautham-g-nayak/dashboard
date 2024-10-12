@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--xs);
+  position: relative;
+  margin: var(--xxs);
+}
+
+.title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  max-width: 190px;
+}
+
+.time {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--black-40);
+  font-size: var(--s-font);
+  margin: 0;
+  line-height: 18px;
+}
+
+.line {
+  border-left: 1px solid var(--black-10);
+  height: var(--font);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: var(--s);
+  margin-bottom: -8px;
+}

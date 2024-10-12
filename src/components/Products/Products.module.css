@@ -1,0 +1,11 @@
+.container {
+  border-radius: var(--m);
+  background-color: var(--Primary-Light);
+  flex: 3;
+  padding: var(--xl);
+}
+
+.title {
+  font-weight: var(--w-bold);
+  padding-bottom: var(--xs);
+}

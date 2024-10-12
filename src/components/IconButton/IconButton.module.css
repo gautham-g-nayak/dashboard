@@ -1,0 +1,15 @@
+.IconButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: var(--xxs);
+  display: flex;
+  align-items: center;
+  border-radius: var(--xs);
+}
+
+.IconButton:hover {
+  background-color: var(--hover-color);
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}

@@ -1,0 +1,10 @@
+.container {
+  border-left: 1px solid var(--black-10);
+  padding: var(--xxl);
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--xl);
+}
+

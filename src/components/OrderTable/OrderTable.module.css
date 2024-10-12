@@ -1,0 +1,38 @@
+.icon {
+  color: var(--text-primary-color);
+  width: var(--m);
+  height: var(--m);
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: var(--xs);
+}
+
+.iconBtn {
+  right: 0;
+  position: absolute;
+  background-color: var(--background-color);
+  border-radius: var(--xs);
+}
+
+.Progress {
+  color: #8a8cd9;
+}
+.Complete {
+  color: #4aa785;
+}
+.Approved {
+  color: #ffc555;
+}
+.Pending {
+  color: #59a8d4;
+}

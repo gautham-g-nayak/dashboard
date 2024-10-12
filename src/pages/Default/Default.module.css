@@ -1,0 +1,68 @@
+.title {
+  font-weight: var(--w-bold);
+  padding: var(--xxs);
+}
+
+.page {
+  padding: var(--xxl);
+}
+
+.conatiner {
+  display: flex;
+  gap: var(--xl);
+  margin-bottom: var(--xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--l);
+  margin: auto;
+  flex: 1;
+}
+
+.gridItem {
+  background-color: var(--primary-color);
+  padding: var(--xl);
+  border-radius: var(--m);
+  color: var(--text);
+}
+
+.gridItemTitle {
+  font-weight: var(--w-bold);
+  padding-bottom: var(--xs);
+}
+
+.nowrap {
+  text-wrap: nowrap;
+}
+
+.gridItemVal {
+  font-weight: var(--w-bold);
+  font-size: var(--xl);
+  line-height: 36px;
+}
+
+.gridItemBox {
+  display: flex;
+  align-items: center;
+  gap: var(--l);
+  transition: all 0.4s ease;
+  margin-top: var(--xs);
+}
+
+.gridItemBox:hover {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  background-color: var(--hover-color);
+  border-radius: var(--xs);
+}
+.purple {
+  background-color: var(--secondary-color);
+  color: var(--text);
+}
+
+.light {
+  background-color: var(--Primary-Light);
+  color: var(--text-primary-color);
+}

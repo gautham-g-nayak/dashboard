@@ -1,38 +1,60 @@
+:root {
+  /* colors */
+  --primary-color: #e3f5ff;
+  --secondary-color: #e5ecf6;
+  --Primary-Light: #f7f9fb;
+  --secondary-cyan: #a8c5da;
+  --text-primary-color: #1c1c1c;
+  --background-color: #ffffff;
+  --hover-color: #1c1c1c1a;
+  --brand-color: #1c1c1c;
+  --black-40: #1c1c1c66;
+  --black-20: #1c1c1c33;
+  --black-10: #1c1c1c1a;
+  --black-5: #1c1c1c0d;
+  --white-40: #ffffff66;
+  --text: #1c1c1c;
+
+  /* sizes */
+  --font: 14px;
+  --s-font: 12px;
+  --s: 12px;
+  --xs: 8px;
+  --xxs: 4px;
+  --m: 16px;
+  --l: 28px;
+  --xl: 24px;
+  --xxl: 20px;
+
+  /* font weight */
+  --w-normal: 400;
+  --w-bold: 600;
+}
+
+[data-theme="dark"] {
+  --Primary-Light: #ffffff0d;
+  --text-primary-color: #ffffff;
+  --background-color: #1c1c1c;
+  --hover-color: #ffffff1a;
+  --brand-color: #c6c7f8;
+  --black-40: #ffffff66;
+  --black-20: #ffffff33;
+  --black-10: #ffffff1a;
+  --black-5: #ffffff1a;
+  --white-40: #1c1c1c66;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
+  font-size: var(--font);
+  font-family: "Inter";
+  font-weight: var(--w-normal);
+  line-height: var(--xxl);
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

@@ -1,0 +1,25 @@
+.container {
+  border-radius: var(--m);
+  background-color: var(--Primary-Light);
+  flex: 1;
+  padding: var(--xl);
+}
+
+.title {
+  font-weight: var(--w-bold);
+}
+
+.legend {
+  display: flex;
+  gap: var(--xs);
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--s-font);
+}
+
+.dot {
+  width: var(--xs);
+  height: var(--xs);
+  border-radius: 50%;
+  background-color: var(--brand-color);
+}

@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  padding: var(--xxl) var(--l);
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--black-10);
+}
+.group {
+  display: flex;
+  align-items: center;
+  gap: var(--xs);
+}
+.title {
+  color: var(--black-40);
+}
+.text {
+  padding: var(--xxs) var(--xs);
+}
+.slash {
+  padding-left: var(--xs);
+  padding-right: var(--xs);
+}
+
+.icon {
+  color: var(--text-primary-color);
+  transition: all 0.4s ease-in-out;
+  width: var(--xxl);
+  height: var(--xxl);
+}
+
+.rotateRight {
+  transform: rotate(360deg);
+}
+
+.rotateLeft {
+  transform: rotate(-360deg);
+}

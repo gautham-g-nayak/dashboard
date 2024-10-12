@@ -1,0 +1,31 @@
+.title {
+  font-weight: var(--w-bold);
+  padding: var(--xs);
+}
+
+.page {
+  padding: var(--xxl);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--xs);
+  border-radius: var(--xs);
+  background-color: var(--Primary-Light);
+  padding: var(--xs);
+  margin-bottom: var(--s);
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: var(--xs);
+}
+
+.icon {
+  color: var(--text-primary-color);
+  width: var(--xxl);
+  height: var(--xxl);
+}

@@ -9,14 +9,11 @@ import {
   PiStar,
   PiSun,
 } from "react-icons/pi";
+import { useSideBar } from "../../context/SidebarContext";
 
-type Props = {
-  toggleRightBar: () => void;
-  toggleLeftBar: () => void;
-};
-
-const AppHeader: React.FC<Props> = ({ toggleRightBar, toggleLeftBar }) => {
+const AppHeader: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
+  const { toggleLeftBar, toggleRightBar } = useSideBar();
 
   return (
     <header className={styles.header}>

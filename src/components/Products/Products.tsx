@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styles from "./Products.module.css";
 import {
   Table,
@@ -9,6 +10,7 @@ import {
   Paper,
   styled,
 } from "@mui/material";
+import { useSideBar } from "../../context/SidebarContext";
 
 const data = [
   {
@@ -53,6 +55,19 @@ const StyledHeaderCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const Products = () => {
+  const { showLeftBar, showRightBar } = useSideBar();
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = window.setTimeout(() => {
+      setLoading(false);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [showLeftBar, showRightBar]);
+
+  if (loading) return <div></div>;
   return (
     <div className={styles.container}>
       <span className={styles.title}>Top Selling Products</span>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import "./App.css";
 import AppHeader from "./components/AppHeader/AppHeader";
@@ -7,29 +7,11 @@ import LeftBar from "./components/LeftBar/LeftBar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import OrderList from "./pages/OrderList/OrderList";
 import Default from "./pages/Default/Default";
+import { SideBarProvider, useSideBar } from "./context/SidebarContext";
 
 const App: React.FC = () => {
   const { theme } = useTheme();
-  const [showRightBar, setShowRightBar] = useState<boolean>(() => {
-    const storedValue = localStorage.getItem("rightBar");
-    return storedValue ? JSON.parse(storedValue) : true;
-  });
-  const [showLeftBar, setShowLeftBar] = useState<boolean>(() => {
-    const storedValue = localStorage.getItem("LeftBar");
-    return storedValue ? JSON.parse(storedValue) : true;
-  });
-
-  const toggleRightBar = () => {
-    const value: boolean = !showRightBar;
-    setShowRightBar(value);
-    localStorage.setItem("rightBar", JSON.stringify(value));
-  };
-
-  const toggleLeftBar = () => {
-    const value: boolean = !showLeftBar;
-    setShowLeftBar(value);
-    localStorage.setItem("LeftBar", JSON.stringify(value));
-  };
+  const { showLeftBar, showRightBar } = useSideBar();
 
   const router = createBrowserRouter([
     {
@@ -57,10 +39,7 @@ const App: React.FC = () => {
     <div className="App">
       {showLeftBar && <LeftBar />}
       <div style={{ flexGrow: 1 }}>
-        <AppHeader
-          toggleRightBar={toggleRightBar}
-          toggleLeftBar={toggleLeftBar}
-        />
+        <AppHeader />
         <RouterProvider router={router} />
       </div>
 
@@ -72,7 +51,9 @@ const App: React.FC = () => {
 export default function ThemedApp() {
   return (
     <ThemeProvider>
-      <App />
+      <SideBarProvider>
+        <App />
+      </SideBarProvider>
     </ThemeProvider>
   );
 }

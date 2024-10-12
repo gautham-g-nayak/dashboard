@@ -1,12 +1,15 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import { createTheme, ThemeProvider } from "@mui/material";
 // import IconButton from "../IconButton/IconButton";
 // import { PiClipboardText } from "react-icons/pi";
 import styles from "./OrderTable.module.css";
+import { useSideBar } from "../../context/SidebarContext";
 
 const OrderTable = () => {
+  const { showLeftBar, showRightBar } = useSideBar();
+  const [loading, setLoading] = useState<boolean>(true);
   const now = new Date();
   const data = [
     {
@@ -42,6 +45,16 @@ const OrderTable = () => {
       status: "Approved",
     },
   ];
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = window.setTimeout(() => {
+      setLoading(false);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [showLeftBar, showRightBar]);
+
   // const [selectedRow, setSelectedRow] = useState<any[]>([]);
   const [paginationModel] = useState({
     pageSize: 4,
@@ -183,6 +196,7 @@ const OrderTable = () => {
       },
     },
   });
+  if (loading) return <div></div>;
   return (
     <ThemeProvider theme={myTheme}>
       <DataGrid

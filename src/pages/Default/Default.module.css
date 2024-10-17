@@ -9,6 +9,7 @@
 
 .conatiner {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--xl);
   margin-bottom: var(--xl);
 }

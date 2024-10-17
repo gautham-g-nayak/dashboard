@@ -6,9 +6,22 @@ import Revenue from "../../components/Revenue/Revenue";
 import Location from "../../components/Location/Location";
 import Sales from "../../components/Sales/Sales";
 import Products from "../../components/Products/Products";
+import { useEffect, useState } from "react";
+import { useSideBar } from "../../context/SidebarContext";
 
 const Default = () => {
   const navigate = useNavigate();
+  const { showLeftBar, showRightBar } = useSideBar();
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = window.setTimeout(() => {
+      setLoading(false);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [showLeftBar, showRightBar]);
+  if (loading) return <div></div>;
 
   return (
     <div className={styles.page}>
@@ -39,7 +52,7 @@ const Default = () => {
               </span>
             </div>
           </div>
-          <div className={`${styles.gridItem} ${styles.light}`}>
+          <div className={`${styles.gridItem} ${styles.light} ${styles.purple_S}`}>
             <span className={styles.gridItemTitle}>Revenue</span>
             <div className={styles.gridItemBox}>
               <span className={styles.gridItemVal}>$752</span>
@@ -49,7 +62,7 @@ const Default = () => {
               </span>
             </div>
           </div>
-          <div className={`${styles.gridItem} ${styles.purple}`}>
+          <div className={`${styles.gridItem} ${styles.purple} ${styles.light_S}`}>
             <span className={styles.gridItemTitle}>Growth</span>
             <div className={styles.gridItemBox}>
               <span className={styles.gridItemVal}>30.0%</span>

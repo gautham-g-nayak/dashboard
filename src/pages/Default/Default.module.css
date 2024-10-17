@@ -19,6 +19,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--l);
   flex: 1;
+  order: -1;
 }
 
 .gridItem {
@@ -99,5 +100,15 @@
 
   .gridItemBox {
     gap: var(--s);
+  }
+
+  .purple_S {
+    background-color: var(--secondary-color);
+    color: var(--text);
+  }
+
+  .light_S {
+    background-color: var(--Primary-Light);
+    color: var(--text-primary-color);
   }
 }

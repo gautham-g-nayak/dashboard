@@ -9,6 +9,10 @@ View the live demo [here](https://zingy-taffy-cf196a.netlify.app/).
 
 ![Dashbord](https://github.com/gautham-g-nayak/dashboard/blob/main/public/dash.gif)
 
+
+![Mobile](https://github.com/gautham-g-nayak/dashboard/blob/main/public/mob.gif)
+
+
 ## Available Scripts
 
 In the project directory, you can run:

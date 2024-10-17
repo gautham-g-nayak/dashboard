@@ -3,7 +3,6 @@
   background-color: var(--Primary-Light);
   flex: 1;
   padding: var(--xl);
-  width: 100%;
   box-sizing: border-box;
 }
 
@@ -24,4 +23,11 @@
   height: var(--xs);
   border-radius: 50%;
   background-color: var(--brand-color);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .container {
+    width: 260px;
+  }
 }

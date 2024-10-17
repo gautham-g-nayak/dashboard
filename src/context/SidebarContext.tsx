@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import React, { createContext, useState, useContext, ReactNode } from "react";
 
 // SideBarContext interface
@@ -6,6 +7,7 @@ interface SideBarContextProps {
   showRightBar: boolean;
   toggleRightBar: () => void;
   toggleLeftBar: () => void;
+  setToRightBar: (value: boolean) => void;
 }
 
 const SideBarContext = createContext<SideBarContextProps | undefined>(
@@ -20,18 +22,24 @@ interface SideBarProviderProps {
 export const SideBarProvider: React.FC<SideBarProviderProps> = ({
   children,
 }) => {
+  const isSmallScreen = useMediaQuery("(max-width: 1024px)");
   const [showLeftBar, setShowLeftBar] = useState<boolean>(() => {
     const storedValue = localStorage.getItem("LeftBar");
-    return storedValue ? JSON.parse(storedValue) : true;
+    return isSmallScreen ? false : storedValue ? JSON.parse(storedValue) : true;
   });
 
   const [showRightBar, setShowRightBar] = useState<boolean>(() => {
     const storedValue = localStorage.getItem("rightBar");
-    return storedValue ? JSON.parse(storedValue) : true;
+    return isSmallScreen ? false : storedValue ? JSON.parse(storedValue) : true;
   });
 
   const toggleRightBar = () => {
     const value: boolean = !showRightBar;
+    setShowRightBar(value);
+    localStorage.setItem("rightBar", JSON.stringify(value));
+  };
+
+  const setToRightBar = (value: boolean) => {
     setShowRightBar(value);
     localStorage.setItem("rightBar", JSON.stringify(value));
   };
@@ -44,7 +52,13 @@ export const SideBarProvider: React.FC<SideBarProviderProps> = ({
 
   return (
     <SideBarContext.Provider
-      value={{ toggleLeftBar, toggleRightBar, showLeftBar, showRightBar }}
+      value={{
+        toggleLeftBar,
+        toggleRightBar,
+        setToRightBar,
+        showLeftBar,
+        showRightBar,
+      }}
     >
       {children}
     </SideBarContext.Provider>

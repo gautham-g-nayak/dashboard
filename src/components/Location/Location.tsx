@@ -1,11 +1,5 @@
 import styles from "./Location.module.css";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
 const Location = () => {
   const data = [
@@ -17,7 +11,12 @@ const Location = () => {
   return (
     <div className={styles.container}>
       <span className={styles.title}>Revenue by Location</span>
-      <ResponsiveContainer width="100%" height={200}>
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        maxHeight={205}
+        minHeight="205px"
+      >
         <BarChart
           layout="vertical"
           data={data}

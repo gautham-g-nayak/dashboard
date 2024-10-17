@@ -14,14 +14,21 @@
   color: var(--black-40);
 }
 .text {
-  padding: var(--xxs) var(--xs);
+  padding: var(--xxs) var(--xxs);
 }
 .slash {
-  padding-left: var(--xs);
-  padding-right: var(--xs);
+  padding-left: var(--xxs);
+  padding-right: var(--xxs);
 }
 
 .icon {
+  color: var(--text-primary-color);
+  transition: all 0.4s ease-in-out;
+  width: var(--xxl);
+  height: var(--xxl);
+}
+
+.icon_S {
   color: var(--text-primary-color);
   transition: all 0.4s ease-in-out;
   width: var(--xxl);
@@ -34,4 +41,20 @@
 
 .rotateLeft {
   transform: rotate(-360deg);
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .title, .slash, .text, .icon, .iconBtn {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  
+  .group {
+    gap: var(--xs);
+  }
 }

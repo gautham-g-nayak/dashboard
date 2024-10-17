@@ -7,11 +7,10 @@ import LeftBar from "./components/LeftBar/LeftBar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import OrderList from "./pages/OrderList/OrderList";
 import Default from "./pages/Default/Default";
-import { SideBarProvider, useSideBar } from "./context/SidebarContext";
+import { SideBarProvider } from "./context/SidebarContext";
 
 const App: React.FC = () => {
   const { theme } = useTheme();
-  const { showLeftBar, showRightBar } = useSideBar();
 
   const router = createBrowserRouter([
     {
@@ -37,13 +36,16 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {showLeftBar && <LeftBar />}
-      <div style={{ flexGrow: 1 }}>
+      <div style={{ flexShrink: 0 }}>
+        <LeftBar />
+      </div>
+      <div style={{ flexGrow: 1, minWidth: 0 }}>
         <AppHeader />
         <RouterProvider router={router} />
       </div>
-
-      {showRightBar && <RightBar />}
+      <div style={{ flexShrink: 0 }}>
+        <RightBar />
+      </div>
     </div>
   );
 };

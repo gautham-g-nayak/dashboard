@@ -49,7 +49,7 @@ const Projections = () => {
   return (
     <div className={styles.container}>
       <span className={styles.title}>Projections vs Actuals</span>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="100%" minHeight="205px">
         <BarChart
           data={data}
           margin={{

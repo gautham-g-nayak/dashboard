@@ -68,13 +68,16 @@ const Products = () => {
   }, [showLeftBar, showRightBar]);
 
   if (loading) return <div></div>;
+
   return (
-    <div className={styles.container}>
+    <div className={styles.products_container}>
       <span className={styles.title}>Top Selling Products</span>
       <TableContainer
         elevation={0}
         component={Paper}
-        sx={{ backgroundColor: "transparent" }}
+        sx={{
+          backgroundColor: "transparent",
+        }}
       >
         <Table aria-label="simple table">
           {/* Table Header */}

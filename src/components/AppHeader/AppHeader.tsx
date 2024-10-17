@@ -19,10 +19,11 @@ const AppHeader: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.group}>
         <IconButton
-          icon={<PiSidebar className={styles.icon} />}
+          icon={<PiSidebar className={styles.icon_S} />}
           onClick={toggleLeftBar}
         />
         <IconButton
+          className={styles.iconBtn}
           icon={<PiStar className={styles.icon} />}
           onClick={() => {}}
         />
@@ -35,7 +36,7 @@ const AppHeader: React.FC = () => {
         <IconButton
           icon={
             <PiSun
-              className={`${styles.icon} ${
+              className={`${styles.icon_S} ${
                 theme === "light" ? styles.rotateRight : styles.rotateLeft
               }`}
             />
@@ -43,15 +44,17 @@ const AppHeader: React.FC = () => {
           onClick={toggleTheme}
         />
         <IconButton
+          className={styles.iconBtn}
           icon={<PiClockCounterClockwise className={styles.icon} />}
           onClick={() => {}}
         />
         <IconButton
+          className={styles.iconBtn}
           icon={<PiBell className={styles.icon} />}
           onClick={() => {}}
         />
         <IconButton
-          icon={<PiSidebar className={styles.icon} />}
+          icon={<PiSidebar className={styles.icon_S} />}
           onClick={toggleRightBar}
         />
       </div>

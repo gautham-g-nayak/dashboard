@@ -1,11 +1,20 @@
-.container {
+.products_container {
   border-radius: var(--m);
   background-color: var(--Primary-Light);
   flex: 3;
   padding: var(--xl);
+  overflow-x: auto;
+  box-sizing: border-box;
 }
 
 .title {
   font-weight: var(--w-bold);
   padding-bottom: var(--xs);
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .products_container {
+    width: calc(100vw - var(--m) - var(--xl));
+  }
 }

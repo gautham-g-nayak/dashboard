@@ -2,20 +2,20 @@
   border-radius: var(--m);
   background-color: var(--Primary-Light);
   flex: 3;
-  height: 205px;
   padding-bottom: var(--xl);
   padding-top: var(--xl);
 }
 
 .title {
   font-weight: var(--w-bold);
-  padding-left: var(--xl);
 }
 
 .title_container {
   display: flex;
   gap: var(--xl);
   align-items: center;
+  flex-wrap: wrap;
+  padding-left: var(--xl);
 }
 
 .dot {
@@ -42,4 +42,17 @@
   display: flex;
   gap: var(--xs);
   align-items: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title_container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: var(--xl);
+  }
+
+  .line {
+    display: none;
+  }
 }

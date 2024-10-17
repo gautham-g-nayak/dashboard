@@ -3,7 +3,7 @@
   background-color: var(--Primary-Light);
   flex: 1;
   padding: var(--xl);
-  max-width: 300px;
+  /* max-width: 300px; */
 }
 
 .title {

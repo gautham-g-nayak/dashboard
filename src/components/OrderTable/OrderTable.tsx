@@ -1,15 +1,10 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import { createTheme, ThemeProvider } from "@mui/material";
-// import IconButton from "../IconButton/IconButton";
-// import { PiClipboardText } from "react-icons/pi";
 import styles from "./OrderTable.module.css";
-import { useSideBar } from "../../context/SidebarContext";
 
 const OrderTable = () => {
-  const { showLeftBar, showRightBar } = useSideBar();
-  const [loading, setLoading] = useState<boolean>(true);
   const now = new Date();
   const data = [
     {
@@ -46,16 +41,6 @@ const OrderTable = () => {
     },
   ];
 
-  useEffect(() => {
-    setLoading(true);
-    const timer = window.setTimeout(() => {
-      setLoading(false);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [showLeftBar, showRightBar]);
-
-  // const [selectedRow, setSelectedRow] = useState<any[]>([]);
   const [paginationModel] = useState({
     pageSize: 4,
     page: 0,
@@ -68,6 +53,7 @@ const OrderTable = () => {
       sortable: false,
       disableColumnMenu: true,
       flex: 1,
+      minWidth: 120,
     },
     {
       field: "user",
@@ -75,6 +61,7 @@ const OrderTable = () => {
       sortable: false,
       disableColumnMenu: true,
       flex: 1,
+      minWidth: 120,
       renderCell: (params) => (
         <div className={styles.user}>
           <img src="/user.png" alt="user" />
@@ -88,6 +75,7 @@ const OrderTable = () => {
       sortable: false,
       disableColumnMenu: true,
       flex: 1,
+      minWidth: 120,
     },
     {
       field: "address",
@@ -95,16 +83,11 @@ const OrderTable = () => {
       sortable: false,
       disableColumnMenu: true,
       flex: 1,
+      minWidth: 120,
       renderCell: (params) => {
         return (
           <div className={styles.address}>
             <span>{params.value}</span>
-            {/* <div className={styles.iconBtn}>
-              <IconButton
-                icon={<PiClipboardText className={styles.icon} />}
-                onClick={() => navigator.clipboard.writeText(params.value)}
-              />
-            </div> */}
           </div>
         );
       },
@@ -115,6 +98,7 @@ const OrderTable = () => {
       sortable: false,
       disableColumnMenu: true,
       flex: 1,
+      minWidth: 120,
       renderCell: (params) => (
         <span>
           {formatDistanceToNow(new Date(params.value), { addSuffix: true })}
@@ -127,6 +111,7 @@ const OrderTable = () => {
       sortable: false,
       disableColumnMenu: true,
       flex: 1,
+      minWidth: 120,
       renderCell: (params) => (
         <span className={styles[params.value]}>• {params.value}</span>
       ),
@@ -196,12 +181,11 @@ const OrderTable = () => {
       },
     },
   });
-  if (loading) return <div></div>;
+
   return (
     <ThemeProvider theme={myTheme}>
       <DataGrid
         rows={data}
-        style={{ maxWidth: "100%", minWidth: "500px", flex: 1 }}
         columns={columns}
         checkboxSelection
         disableDensitySelector

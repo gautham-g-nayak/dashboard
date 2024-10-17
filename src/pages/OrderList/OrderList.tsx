@@ -4,8 +4,17 @@ import styles from "./OrderList.module.css";
 import { IoAdd, IoFilter } from "react-icons/io5";
 import { PiArrowsDownUp } from "react-icons/pi";
 import OrderTable from "../../components/OrderTable/OrderTable";
+import { useEffect } from "react";
+import { useSideBar } from "../../context/SidebarContext";
 
 const OrderList = () => {
+  const { setToRightBar } = useSideBar();
+
+  useEffect(() => {
+    setToRightBar(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className={styles.page}>
       <p className={styles.title}>Order List</p>
@@ -26,7 +35,7 @@ const OrderList = () => {
         </div>
         <SearchComponent showTrailing={false} />
       </div>
-      <OrderTable/>
+      <OrderTable />
     </div>
   );
 };

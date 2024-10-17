@@ -5,6 +5,8 @@
 
 .page {
   padding: var(--xxl);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .action {

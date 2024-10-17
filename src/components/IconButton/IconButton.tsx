@@ -4,12 +4,12 @@ import styles from "./IconButton.module.css";
 type Props = {
   icon: JSX.Element;
   onClick: () => void;
-  style?: React.CSSProperties;
+  className?: string;
 };
 
-const IconButton: React.FC<Props> = ({ icon, onClick, style }): JSX.Element => {
+const IconButton: React.FC<Props> = ({ icon, onClick, className }): JSX.Element => {
   return (
-    <button onClick={onClick} className={styles.IconButton} style={style}>
+    <button onClick={onClick} className={`${styles.IconButton} ${className}`}>
       {icon}
     </button>
   );

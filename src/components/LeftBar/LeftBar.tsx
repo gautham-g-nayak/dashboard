@@ -9,10 +9,14 @@ import {
   PiShoppingBagOpen,
   PiUsersThree,
 } from "react-icons/pi";
+import { IoClose } from "react-icons/io5";
 import styles from "./LeftBar.module.css";
 import Menu from "../Menu/Menu";
+import { Drawer, useMediaQuery } from "@mui/material";
+import { useSideBar } from "../../context/SidebarContext";
+import IconButton from "../IconButton/IconButton";
 
-const LeftBar: React.FC = () => {
+const LeftBarContent: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.user}>
@@ -83,6 +87,37 @@ const LeftBar: React.FC = () => {
         />
       </div>
     </div>
+  );
+};
+
+const LeftBar: React.FC = () => {
+  const isSmallScreen = useMediaQuery("(max-width: 1024px)");
+  const { showLeftBar, toggleLeftBar } = useSideBar();
+  return isSmallScreen ? (
+    <Drawer
+      open={showLeftBar}
+      onClose={toggleLeftBar}
+      anchor="left"
+      PaperProps={{
+        style: {
+          backgroundColor: "var(--background-color)",
+          color: "var(--text-primary-color)",
+        },
+      }}
+    >
+      <>
+        <IconButton
+          className={styles.closeButton}
+          icon={<IoClose className={styles.closeButtonIcon} />}
+          onClick={toggleLeftBar}
+        />
+        <LeftBarContent />
+      </>
+    </Drawer>
+  ) : showLeftBar ? (
+    <LeftBarContent />
+  ) : (
+    <></>
   );
 };
 

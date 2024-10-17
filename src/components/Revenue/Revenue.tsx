@@ -61,7 +61,12 @@ const Revenue = () => {
           <span className={styles.value}>$68,768</span>
         </div>
       </div>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        maxHeight={205}
+        minHeight="245px"
+      >
         <LineChart
           width={500}
           height={300}

@@ -4,6 +4,8 @@
   flex: 3;
   padding-bottom: var(--xl);
   padding-top: var(--xl);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .title {

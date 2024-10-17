@@ -69,13 +69,10 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .conatiner {
     flex-direction: column;
   }
-}
-
-@media (max-width: 768px) {
   .gridItem {
     padding: var(--m);
   }

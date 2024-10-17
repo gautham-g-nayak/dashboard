@@ -65,7 +65,7 @@ const Revenue = () => {
         width="100%"
         height="100%"
         maxHeight={205}
-        minHeight="245px"
+        minHeight="205px"
       >
         <LineChart
           width={500}

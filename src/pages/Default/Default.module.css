@@ -11,6 +11,7 @@
 
 .conatiner {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--xl);
   margin-bottom: var(--xl);
 }
@@ -70,11 +71,6 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
-  .conatiner {
-    flex-wrap: wrap;
-  }
-}
 @media (max-width: 768px) {
   .conatiner {
     flex-direction: column;

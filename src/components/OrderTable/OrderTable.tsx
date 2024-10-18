@@ -64,7 +64,7 @@ const OrderTable = () => {
       minWidth: 120,
       renderCell: (params) => (
         <div className={styles.user}>
-          <img src="/user.png" alt="user" />
+          <img src={`${process.env.PUBLIC_URL}/user.png`} alt="user" />
           <span>{params.value}</span>
         </div>
       ),

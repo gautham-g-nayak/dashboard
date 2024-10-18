@@ -5,6 +5,8 @@
 
 .page {
   padding: var(--xl);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .conatiner {

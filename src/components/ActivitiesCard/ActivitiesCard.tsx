@@ -10,7 +10,7 @@ type Props = {
 const ActivitiesCard: React.FC<Props> = ({ title, time, isLast = false }) => {
   return (
     <div className={styles.container}>
-      <img src={`${process.env.PUBLIC_URL}/user.png`} alt="user" />
+      <img src="/user.png" alt="user" />
       {!isLast && <div className={styles.line}></div>}
       <div>
         <p className={styles.title}>{title}</p>

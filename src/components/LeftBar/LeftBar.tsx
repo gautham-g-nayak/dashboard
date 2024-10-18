@@ -20,7 +20,7 @@ const LeftBarContent: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <img src={`${process.env.PUBLIC_URL}/user.png`} alt="user" />
+        <img src="/user.png" alt="user" />
         <span>ByeWind</span>
       </div>
       <div className={styles.top_section}>

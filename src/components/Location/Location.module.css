@@ -10,3 +10,10 @@
 .title {
   font-weight: var(--w-bold);
 }
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .container {
+    width: 260px;
+  }
+}
